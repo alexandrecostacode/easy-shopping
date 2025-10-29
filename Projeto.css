@@ -1,0 +1,166 @@
+/* Projeto CSS */
+
+*{  /* Lembrando que o * asterísitco, tudo que estiver dentro dele, será aplicado em toda a página.  */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+
+.wrapper{
+    height: 100vh;  /* A unidade vh no CSS significa Viewport Height (Altura da Janela de Visualização) e representa 1% da altura da janela visível do navegador */
+    width: 100vw; /* A unidade vw (viewport width) é uma unidade de medida em CSS que representa uma porcentagem da largura da janela do navegador. Ou seja, 1vw é igual a 1% da largura total da tela (viewport) */ 
+}
+
+    /* display: inline-block; no CSS combina as características dos elementos de linha (inline) e de bloco (block). 
+    Ele permite que elementos fiquem lado a lado em uma mesma linha (como os elementos inline), 
+    mas também permite definir suas propriedades de largura (width), altura (height), margem (margin) e 
+    espaçamento interno (padding) (como os elementos block).  */
+
+.container-left{
+    display: inline-block;
+    width: 60%; /* Aqui ele ocupará 60% da tela do lado esquerdo */
+    padding-left: 70px; /* O padding-left, posiciona, todo o conteúdo dentro dele, para esquerda. */
+    margin-top: 33%; /* Afasta ou aproxima todo o conteúdo para o top */
+}
+
+
+.container-right{
+    display: inline-block;
+    background: rgba(93, 93, 125, 0.16); /* Ordem dos números: r - red , g - green , b - blue e a - Alfa é um valor de opacidade que define o quão transparente ou opaco um elemento é. */
+    height: 100vw; /* Aqui o background dele, ocupa toda a tela na vertical da direita. */
+    width: 40%;
+    position: absolute;
+}
+
+img{
+    position: relative;
+    top: 15%;
+    right: 130px;
+}
+
+h1{
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 80px;
+    color: #5D5D7D;
+    width: 368px;
+}
+
+p{
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
+    color: #5D5D7D;
+    opacity: 0.6;
+    margin: 15px 0;  /* No margin, quando se tem apenas dois valores, o primeiro se aplica em cima e em baixo e o segundo para os lados (esquerdo e direito) */
+    width: 540px;
+}
+
+button{
+    width: 269px;
+    height: 62px;
+    background: #9499EA;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover{  /*  hover - Toda vez que passar o cursor no botão, ele ficará um pouco transparente. */
+    opacity: 0.8;
+}
+
+button:active{  /* Nessse caso, usamos o active para quando o botão receber um clique, ele mudará a opacidade, ficando uma pouco mais transparente. */
+    opacity: 0.5;
+}
+
+a{
+    font-size: 20px;
+    line-height: 41px;
+    color: #5D5D7D;
+    margin-right: 41px;
+}
+
+a:nth-child(2) {  /* Aqui, usamos o pseudo classe chamado nth-child, para mudar apenas o segundo (2) elemento, nesse caso alteramos a opacidade do segundo link.  */
+    opacity: 0.4;
+}
+
+a:hover {
+    opacity: 0.4;
+}
+
+a:active {
+    opacity: 0.8;
+}
+
+a {
+    cursor: pointer;
+}
+
+header {
+    margin: 24px 0 0 57px; /* Muda o posicionamento, de tudo aquilo que está dentro do header. Afastando m pouco dos cantos superiores. */
+}
+
+/* Abaixo é a Resposividade do site. */
+
+/* Com o @media (Media Query) , tudo que estiver dentro dele, será modificado. 
+Em outras palavras, tudo mudará apartir de 900px de tela. (Entrará em Modo Responsivo)  */
+
+@media screen and (max-width:900px){ 
+    .container-left{
+        width: 100%; /* Ocupará toda a tela na lateral (largura) */
+        height: 50%; /* Ocupará 50% (metade da tela na vertical (altura) */
+        padding: 0; /* Sem Preenchimento */
+        margin: 0;   /* Sem Margem */  
+    }
+
+    .container-right{
+        display: block; /* Cada um no seu lugar (cada um no seu bloco) */
+        height: auto; /* Aqui será escolhido automaticamante a altura, de acordo com o tamanho da tela vertical. */
+        width: 100%; /* Também ocupará a tela toda. */
+        position: static; /* A posição será estática. Se você não definir a propriedade position para um elemento, ele terá position: static por padrão.  */
+        padding: 40px; 
+    }
+
+    img {
+        position: static; /* A posição será estática. Se você não definir a propriedade position para um elemento, ele terá position: static por padrão.  */
+        max-width: 90%; /* Aqui com o max-width:90% , a imagem terá um limite de tamanho até 90% */
+    }
+
+    header {
+        display: none; /* Aqui, no modo responsivo, o menu (Home Trabalho Sobre Contato), será apagado. */
+    }
+
+    h1 {
+        font-size: 36px; /* Alterará o tamnho da fonte. */
+        line-height: 52px; /* Altura da linha, entre uma frase e outra */
+        width: auto; /* Aqui será escolhido automaticamante a largura, de acordo com o tamanho da tela na horizontal. */
+        margin: 58px 50px 0 50px; /* Cima 58px / Direita 50px / Baixo 0px Esquerda 50px */
+        text-align: center; /* O título será alinhado ao centro. */
+    }
+
+    p {
+        margin: 15px 40px; /* Cima e Baixo 15px / Direita e Esquerda 40px */
+        width: auto; /* Aqui será escolhido automaticamante a largura, de acordo com o tamanho da tela na horizontal. */
+        text-align: center;  /* O texto, também será alinhado ao centro. */
+        font-size: 14px; /* Mudará o tamnho da fonte. */
+        line-height: 24px; /* Mudará a altura entre as linhas. */
+    }
+
+    button {
+        margin: 0 auto; /* Diferente do h1 e o p, para centralizar o button, usaremos o margin: Cima e Baixo 0px e Direita e Esquerda auto */
+        display: block; /* É preciso usar o margin: 0 auto com o display:block (cada um no seu bloco), para centralizar o button, SE NÃO, NÃO FUNCIONARÁ. */
+    }
+
+@media screen and (max-width:330px) { /* Aqui é para celulares com telas abaixo de 330px */
+    .container-left{
+        height: 70%;
+    }
+} 
+        
+}
