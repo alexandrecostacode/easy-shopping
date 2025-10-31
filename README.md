@@ -10,3 +10,4 @@
 <br>
 <h2>Tecnologias ultilizadas nesse projeto:</h2>
 <p>HTML E CSS</p>
+<br><a href="https://alexandrecostacode.github.io/easy-shopping/">Veja como ficou clicando aqui.</a>
